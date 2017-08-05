@@ -1,0 +1,19 @@
+<div class="grid-x">
+	<div class="cell">
+		<div class="top-bar" id="menu">
+			<div class="top-bar-left">
+				<ul class="menu">
+					<img class="logo" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png" alt="github_logo" />
+					<li class="menu-text">Github Users</li>
+				</ul>
+			</div>
+			<div class="top-bar-right">
+				<ul class="menu">
+					<li ng-repeat='item in MC.menu_links'>
+						<a ui-sref="{{ item.name }}"> {{ item.title }} </a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
