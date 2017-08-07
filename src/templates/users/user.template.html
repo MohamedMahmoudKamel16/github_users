@@ -1,0 +1,13 @@
+<div class="row expanded">
+	<div class="columns small-12">
+		<h4> User Info </h4>
+		<img src="{{ USC.user.avatar_url }}" alt="{{ USC.user.login }}">
+		<p class="text-center">{{ USC.user.login }}</p>
+	</div>
+	<div class="columns">
+		<div class="row expanded user_info" ng-repeat="attribute in USC.user_attributes">
+			<div class="columns small-3 user_attribute"> {{ attribute.title }}: </div>
+			<div class="columns small-offset-1"> {{ USC.user[attribute.key] }} </div>
+		</div>
+	</div>
+</div>
