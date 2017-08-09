@@ -1,27 +1,24 @@
 const CounterComponent = {
-	templateUrl: 'src/templates/menu.template.html',
-	controllerAs: 'MC',
-	controller: function($scope, $state, $rootScope) {
+  templateUrl: 'src/templates/menu.template.html',
+  controllerAs: 'MC',
+  controller($state, $location) {
+    const vm = this;
 
-		const vm = this;
+    vm.$onInit = () => {
+      const path = $location.$$path.split('/')[1];
+      vm.menu_links = [
+        { title: 'Home', name: 'home', path: '' },
+        { title: 'About', name: 'about', path: 'about' },
+        { title: 'Users', name: 'users', path: 'users' },
+      ];
+      vm.title = (vm.menu_links.find(link => link.path === path)).title;
+    };
 
-		vm.$onInit = function() {
-			console.log($state.current);
-			vm.title = $state.current.data.title || 'Users Page';
-			vm.menu_links = [
-				{ title: 'Home', 'name': 'home' },
-				{ title: 'About', 'name': 'about' },
-				{ title: 'Users', 'name': 'users' }
-			];
-		};
+    vm.changeTitle = (title) => {
+      vm.title = title;
+    };
+  },
 
-
-		$scope.$on('$locationChangeStart', function() { 
-			vm.title = $state.current.data.title;
-		});
-
-
-	},
 };
 
 export default CounterComponent;

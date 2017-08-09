@@ -1,7 +1,7 @@
 import GithubService from './GithubService';
 
 const SERVICES = {
-	GithubService
-}
+  GithubService,
+};
 
 export default SERVICES;

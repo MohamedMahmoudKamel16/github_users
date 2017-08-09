@@ -1,9 +1,5 @@
 const AboutComponent = {
-	templateUrl: 'src/templates/about.template.html',
-	controllerAs: 'AC',
-	controller: function(){
-		
-	}
+  templateUrl: 'src/templates/about.template.html',
 };
 
 export default AboutComponent;
