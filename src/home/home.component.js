@@ -1,5 +1,5 @@
 const HomeComponent = {
-  templateUrl: 'src/templates/home.template.html',
+  templateUrl: 'src/home/home.template.html',
 };
 
 export default HomeComponent;

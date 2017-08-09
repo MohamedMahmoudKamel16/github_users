@@ -2,7 +2,7 @@ const UsersComponent = {
   bindings: {
     users: '<',
   },
-  templateUrl: 'src/templates/users/list.template.html',
+  templateUrl: 'src/users/users.template.html',
   controllerAs: 'UC',
   controller($state, $stateParams, GithubService) {
     const vm = this;

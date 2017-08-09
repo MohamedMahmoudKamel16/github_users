@@ -1,5 +1,5 @@
 const CounterComponent = {
-  templateUrl: 'src/templates/menu.template.html',
+  templateUrl: 'src/menu/menu.template.html',
   controllerAs: 'MC',
   controller($state, $location) {
     const vm = this;

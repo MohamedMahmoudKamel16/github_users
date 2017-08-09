@@ -1,5 +1,5 @@
 const UserComponent = {
-  templateUrl: 'src/templates/users/user.template.html',
+  templateUrl: 'src/users/user/user.template.html',
   controllerAs: 'USC',
   controller(GithubService, $stateParams) {
     const vm = this;

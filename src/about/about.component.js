@@ -1,5 +1,5 @@
 const AboutComponent = {
-  templateUrl: 'src/templates/about.template.html',
+  templateUrl: 'src/about/about.template.html',
 };
 
 export default AboutComponent;

@@ -1,5 +1,5 @@
 /* globals angular beforeEach describe expect it */
-import { page1, page2 } from '../data';
+import { page1, page2 } from '../utils/data';
 
 const GithubServiceTest = () => {
   let service,
@@ -32,6 +32,7 @@ const GithubServiceTest = () => {
       });
       httpBackend.flush();
     });
+
 
     it('should get user.', () => {
       httpBackend.whenGET('https://api.github.com/users/mojombo').respond(page1[0]);

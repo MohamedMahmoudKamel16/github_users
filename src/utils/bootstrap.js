@@ -1,8 +1,9 @@
-import COMPONENTS from './components';
-import SERVICES from './services';
-import ROUTES from './routes';
+/* globals TESTING */
 
-const bootstrap = (githubModule) => {
+import { COMPONENTS, SERVICES } from './loader';
+import ROUTES from '../routes/routes';
+
+export const bootstrap = (githubModule) => {
   Object.keys(COMPONENTS).map(c => githubModule.component(c, COMPONENTS[c]));
   Object.keys(SERVICES).map(s => githubModule.factory(s, SERVICES[s]));
 
@@ -17,4 +18,15 @@ const bootstrap = (githubModule) => {
   });
 };
 
-export default bootstrap;
+
+export const test = (githubModule) => {
+  if (TESTING) {
+    require('angular-mocks/angular-mocks');
+    require('../routes/routes.spec.js')(githubModule);
+    require('../services/github.service.spec.js')();
+    require('../users/users.component.spec.js')();
+    require('../users/user/user.component.spec.js')();
+    require('../menu/menu.component.spec.js')();
+  }
+};
+

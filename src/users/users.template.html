@@ -1,0 +1,16 @@
+<div class="row expanded">
+	<div id='users_list' class="columns shrink">
+		<h4> Users List </h4>
+		<ul class="menu vertical">
+			<li ng-repeat='user in UC.users' ui-sref-active="active">
+				<a ng-click="UC.goToUser(user.login)">
+					{{ user.login }}
+				</a>
+			</li>
+		</ul>
+		<button class="button small" ng-click="UC.loadMore()"> Load More ... </button>
+	</div>
+	<div id="user_profile" class="columns">
+		<ui-view></ui-view>
+	</div>
+</div>
